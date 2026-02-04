@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <meta name="language" content="English">
+    <meta name="google" content="notranslate">
+    <link rel="stylesheet" href="style_df.css">
+    <link rel="icon" href="img/TestTube.svg">
+    <title>DrillBase – drilling fluids</title>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=105463206', 'ym');
+
+        ym(105463206, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/105463206" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+</head>
+<body>
+<div class="main-container">
+    <div class="container-item header header-line">
+        <div class="header-items"><a href="index.html"><button class="buttonAll back">< back</button></a></div>
+        <div class="header-items" onclick="changeTheme()">
+            <button class="buttonAll mode">
+                <svg class='icon-mode-size' xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#666666">
+                    <rect fill="none" height="24" width="24"/>
+                    <path class='icon-mode' d="M11.01,3.05C6.51,3.54,3,7.36,3,12c0,4.97,4.03,9,9,9c4.63,0,8.45-3.5,8.95-8c0.09-0.79-0.78-1.42-1.54-0.95 c-0.84,0.54-1.84,0.85-2.91,0.85c-2.98,0-5.4-2.42-5.4-5.4c0-1.06,0.31-2.06,0.84-2.89C12.39,3.94,11.9,2.98,11.01,3.05z"/>
+                </svg>
+                <span>dark mode</span>
+            </button>
+        </div>
+    </div>
+    <div class="container-item body">
+        <div class="body-item paragraph"><span class="par-icon"></span><span class="par">drilling fluids</span></div>
+        <div class="body-item items">
+            <div class="body-items one">
+                <div class="grid">
+                    <div class="one-item one-head">mud weighting</div>
+                    <div>
+                        <div class="grid-item history mudWeightingHistory"></div>
+                        <div class="grid-item play" onclick="mudWeighting()"></div>
+                    </div>
+                </div>
+                <div class="one-item one-body">
+                    <div class="one-body-left">
+                        <div class="one-body-left-item">final mud density, g/сm<sup>3</sup>: </div>
+                        <div class="one-body-left-item">start mud volume, m<sup>3</sup>: </div>
+                        <div class="one-body-left-item">start mud density, g/сm<sup>3</sup>: </div>
+                        <div class="one-body-left-item">weighting density, g/сm<sup>3</sup>: </div>
+                    </div>
+                    <div class="one-body-right">
+                        <div class="one-body-right-container"><input inputmode="decimal" type='number' class="finalMudDensity"></div>
+                        <div class="one-body-right-container"><input inputmode="decimal" type='number' class="startMudVolume"></div>
+                        <div class="one-body-right-container"><input inputmode="decimal" type='number' class="startMudDensity"></div>
+                        <div class="one-body-right-container"><input inputmode="decimal" type='number' class="weightingDensity"></div>
+                    </div>
+                </div>
+                <div class="one-item one-foot">
+                    <div class="one-foot-item-amount">amount of weight, kg:</div>
+                    <div class="one-foot-item"><p class="one-foot-item-p amount-p mudWeighting"></p></div>
+                </div>
+            </div>
+            <div class="body-items two">
+                <div class="grid">
+                    <div class="one-item one-head">annulus velocity</div>
+                    <div>
+                        <div class="grid-item history annulusVelocityHistory"></div>
+                        <div class="grid-item play" onclick="annulusVelocity()"></div>
+                    </div>
+                </div>
+                <div class="one-item one-body">
+                    <div class="one-body-left">
+                        <div class="one-body-left-item">drill bit diameter, mm: </div>
+                        <div class="one-body-left-item">drill string diameter, mm: </div>
+                        <div class="one-body-left-item">pump performance, l/sec: </div>
+                    </div>
+                    <div class="one-body-right">
+                        <div class="one-body-right-container"><input inputmode="decimal" type='number' class="drillBitDiameter velocity"></div>
+                        <div class="one-body-right-container"><input inputmode="decimal" type='number' class="drillStringDiameter velocity"></div>
+                        <div class="one-body-right-container"><input inputmode="decimal" type='number' class="pumpPerformance velocity"></div>
+                    </div>
+                </div>
+                <div class="one-item one-foot">
+                    <div class="one-foot-item-amount">amount of velocity, m/sec:</div>
+                    <div class="one-foot-item"><p class="one-foot-item-p amount-p annulusVelocity"></p></div>
+                </div>
+            </div>
+            <div class="body-items three">
+                <div class="grid">
+                    <div class="one-item one-head">density mixing muds</div>
+                    <div>
+                        <div class="grid-item history densityMixingMudsHistory"></div>
+                        <div class="grid-item play" onclick="densityMixingMuds()"></div>
+                    </div>
+                </div>
+                <div class="one-item one-body">
+                    <div class="one-body-left">
+                        <div class="one-body-left-item">mixing density, g/cm<sup>3</sup>: </div>
+                        <div class="one-body-left-item">start mud volume, m<sup>3</sup>: </div>
+                        <div class="one-body-left-item">start mud density, g/cm<sup>3</sup>: </div>
+                        <div class="one-body-left-item">density add mud, g/cm<sup>3</sup>: </div>
+                    </div>
+                    <div class="one-body-right">
+                        <div class="one-body-right-container"><input inputmode="decimal" type='number' class="mixingDensity"></div>
+                        <div class="one-body-right-container"><input inputmode="decimal" type='number' class="startMudVolume-2"></div>
+                        <div class="one-body-right-container"><input inputmode="decimal" type='number' class="startMudDensity-2"></div>
+                        <div class="one-body-right-container"><input inputmode="decimal" type='number' class="densityAddMud"></div>
+                    </div>
+                </div>
+                <div class="one-item one-foot">
+                    <div class="one-foot-item-amount">volume of add mud, m<sup>3</sup>:</div>
+                    <div class="one-foot-item"><p class="one-foot-item-p amount-p densityMixingMuds"></p></div>
+                </div>
+            </div>
+            <div class="body-items four">
+                <div class="grid">
+                    <div class="one-item one-head">volume of pit</div>
+                    <div>
+                        <div class="grid-item history volumeOfPitHistory"></div>
+                        <div class="grid-item play" onclick="volumeOfPit()"></div>
+                    </div>
+                </div>
+                <div class="one-item one-body">
+                    <div class="one-body-left">
+                        <div class="one-body-left-item">length, m: </div>
+                        <div class="one-body-left-item">width, m: </div>
+                        <div class="one-body-left-item">height, m: </div>
+                    </div>
+                    <div class="one-body-right">
+                        <div class="one-body-right-container"><input inputmode="decimal" type='number' class="length volume"></div>
+                        <div class="one-body-right-container"><input inputmode="decimal" type='number' class="width volume"></div>
+                        <div class="one-body-right-container"><input inputmode="decimal" type='number' class="height volume"></div>
+                    </div>
+                </div>
+                <div class="one-item one-foot">
+                    <div class="one-foot-item-amount">volume of pit, m3:</div>
+                    <div class="one-foot-item"><p class="one-foot-item-p amount-p volumeOfPit"></p></div>
+                </div>
+            </div>
+            <div class="body-items five">
+                <div class="grid">
+                    <div class="one-item one-head grid-item">OWR</div>
+                    <div>
+                        <div class="grid-item history OWRHistory"></div>
+                        <div class="grid-item play" onclick="OWR()">️</div>
+                    </div>
+                </div>
+                <div class="one-item one-body">
+                    <div class="one-body-left">
+                        <div class="one-body-left-item">oil, ml: </div>
+                        <div class="one-body-left-item">water, ml: </div>
+                    </div>
+                    <div class="one-body-right">
+                        <div class="one-body-right-container"><input inputmode="decimal" type='number' class="oil OWR"></div>
+                        <div class="one-body-right-container"><input inputmode="decimal" type='number' class="water OWR"></div>
+                    </div>
+                </div>
+                <div class="one-item one-foot">
+                    <div class="one-foot-item-amount">amount of OWR:</div>
+                    <div class="one-foot-item"><p class="one-foot-item-p amount-p OWR OWR-result"></p></div>
+                </div>
+            </div>
+            <div class="body-items six">
+                <div class="grid">
+                    <div class="one-item one-head grid-item">density when add mud</div>
+                    <div>
+                        <div class="grid-item history densityWhenAddMudHistory"></div>
+                        <div class="grid-item play" onclick="densityWhenAddMud()">️</div>
+                    </div>
+                </div>
+                <div class="one-item one-body">
+                    <div class="one-body-left">
+                        <div class="one-body-left-item">volume adding mud, m<sup>3</sup>: </div>
+                        <div class="one-body-left-item">density adding mud, kg/m<sup>3</sup>: </div>
+                        <div class="one-body-left-item">volume start mud, m<sup>3</sup>: </div>
+                        <div class="one-body-left-item">density start mud, kg/m<sup>3</sup>: </div>
+                    </div>
+                    <div class="one-body-right">
+                        <div class="one-body-right-container"><input inputmode="decimal" type='number' class="volumeAddingMud"></div>
+                        <div class="one-body-right-container"><input inputmode="decimal" type='number' class="densityAddingMud"></div>
+                        <div class="one-body-right-container"><input inputmode="decimal" type='number' class="volumeStartMud"></div>
+                        <div class="one-body-right-container"><input inputmode="decimal" type='number' class="densityStartMud"></div>
+                    </div>
+                </div>
+                <div class="one-item one-foot">
+                    <div class="one-foot-item-amount">end mud density, kg/m3:</div>
+                    <div class="one-foot-item"><p class="one-foot-item-p amount-p densityWhenAddMud"></p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-item footer"><span class="donat">Поддержать</span> автора <span class="support-icon-man"><img src="img/ManTechnologist.png"></span></div>
+    <div class="bottomLinePage"><div class="point"></div></div>
+    <div class="modal-overlay hidden"></div>
+    <div class='modal hidden'>
+        <div class='support-items backgroundCol-black'>
+            <button class="btn-close">
+                <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 9L9 15M9 9L15 15M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+        <p class='author border'>Поддержать автора:</p>
+        <section class="support">
+            <div class='support-items backgroundCol-black'>
+                <p class='support-item'>Отправить монету:</p>
+                <div class='support-item'>
+                    <p><a id="numberPhone">перейти на оплату</a></p>
+                    <div class="black-theme">
+                        <a href ='https://dalink.to/danilamarinin'>
+                        <button type="button" class="support-btn tel btns">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="68%" height="68%" fill="none" viewBox="0 0 16 16">
+                                <path class="goPay" d="m 4 2 c 0 -0.265625 0.105469 -0.519531 0.292969 -0.707031 c 0.390625 -0.390625 1.023437 -0.390625 1.414062 0 l 6 6 c 0.1875 0.1875 0.292969 0.441406 0.292969 0.707031 s -0.105469 0.519531 -0.292969 0.707031 l -6 6 c -0.390625 0.390625 -1.023437 0.390625 -1.414062 0 c -0.1875 -0.1875 -0.292969 -0.441406 -0.292969 -0.707031 s 0.105469 -0.519531 0.292969 -0.707031 l 5.292969 -5.292969 l -5.292969 -5.292969 c -0.1875 -0.1875 -0.292969 -0.441406 -0.292969 -0.707031 z m 0 0" fill="black"/>
+                            </svg>
+                        </button>
+                        </a>
+                    </div>
+                </div>
+            </div >
+            <div class='support-items backgroundCol-black'>
+                <p class='support-item'>Поделиться ссылкой на наш сайт:</p>
+                <div class='support-item'>
+                    <p id="siteLink">https://drillbase.ru</p>
+                    <div class="black-theme">
+                        <button type="button" class="support-btn link btns">
+                            <svg width="68%" height="68%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path class='telLink paths' d="M8 8V5.2C8 4.0799 8 3.51984 8.21799 3.09202C8.40973 2.71569 8.71569 2.40973 9.09202 2.21799C9.51984 2 10.0799 2 11.2 2H18.8C19.9201 2 20.4802 2 20.908 2.21799C21.2843 2.40973 21.5903 2.71569 21.782 3.09202C22 3.51984 22 4.0799 22 5.2V12.8C22 13.9201 22 14.4802 21.782 14.908C21.5903 15.2843 21.2843 15.5903 20.908 15.782C20.4802 16 19.9201 16 18.8 16H16M5.2 22H12.8C13.9201 22 14.4802 22 14.908 21.782C15.2843 21.5903 15.5903 21.2843 15.782 20.908C16 20.4802 16 19.9201 16 18.8V11.2C16 10.0799 16 9.51984 15.782 9.09202C15.5903 8.71569 15.2843 8.40973 14.908 8.21799C14.4802 8 13.9201 8 12.8 8H5.2C4.0799 8 3.51984 8 3.09202 8.21799C2.71569 8.40973 2.40973 8.71569 2.21799 9.09202C2 9.51984 2 10.0799 2 11.2V18.8C2 19.9201 2 20.4802 2.21799 20.908C2.40973 21.2843 2.71569 21.5903 3.09202 21.782C3.51984 22 4.07989 22 5.2 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <button class="toUp">↑</button>
+</div>
+
+<script src="script.js" defer></script>
+<script src="df-formuls.js"></script>
+<script src="modal.js"></script>
+</body>
+</html>

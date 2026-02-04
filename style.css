@@ -1,0 +1,1659 @@
+@font-face {
+    font-family: "JBMono";
+    src: url("fonts/JetBrainsMono.ttf");
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background-color: rgb(254, 253, 242);
+    color: rgb(46, 59, 70) !important;
+}
+
+.body-black {
+    background-color: #000000;
+    color: #FFFFFF !important;
+}
+
+
+.main-container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr 1fr;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.header a {
+    display: flex;
+    align-items: center;
+}
+
+.header-items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mode {
+    font-family: "JBMono", sans-serif;
+    font-weight: 600;
+    padding: 0;
+    background-color: white;
+    width: 140px;
+    height: 40px;
+    box-sizing: border-box;
+    font-size: 16px;
+    border: solid 2px black;
+    cursor: pointer;
+    color: black;
+    box-shadow: 5px 5px 0 black;
+    position: relative;
+    bottom: 0;
+    right: 0;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.icon-mode-size {
+    width: 24px;
+    height: 24px;
+}
+
+.mode:hover, .button1:hover, .button2:hover, .button3:hover {
+    box-shadow: 10px 10px 0;
+    bottom: 3px;
+    right: 3px;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 60px;
+}
+
+.paragraph {
+    display: grid;
+    align-content: end;
+    justify-content: center;
+    font-size: 80px;
+    font-family: "JBMono", sans-serif;
+    font-weight: 800;
+    text-align: center;
+}
+
+.paragraph-item {
+    transition: 0.3s;
+}
+
+.paragraph-item:first-child {
+
+}
+
+.paragraph-item:last-child {
+    font-size: 40px;
+    font-weight: 400;
+    padding-top: 40px;
+}
+
+.paragraph-item:last-child::after {
+    content: "|";
+    color: rgba(0,0,0,0);
+    font-weight: normal;
+    animation-name: name1;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes name1 {
+    50% {
+        color: #a5f42b;
+    }
+}
+
+.button1, .button2, .button3 {
+    font-family: "JBMono", sans-serif;
+    font-weight: 600;
+    border: solid 2px black;
+    padding: 0;
+    height: 50px;
+    width: 310px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    box-shadow: 5px 5px 0 black;
+    position: relative;
+    bottom: 0;
+    right: 0;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icons {
+    width: 28px;
+    height: 28px;
+    margin-right: 10px;
+}
+
+.button-black {
+    color: white;
+    border: solid 2px rgb(124, 124, 131);
+    background-color: black;
+    box-shadow: 5px 5px 0 rgb(93, 93, 97);
+}
+
+.button-black:hover {
+    box-shadow: 10px 10px 0 rgb(93, 93, 97);
+    bottom: 3px;
+    right: 3px;
+}
+
+.pages {
+    text-decoration: none;
+}
+
+.contacts-logos {
+    padding: 20px;
+    display: flex;
+    justify-content: end;
+}
+
+.contacts-logos-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    fill: #3D454D;
+}
+
+.logo:hover {
+    fill: #323232;
+}
+
+.logo-black {
+    fill: #cdcdcd;
+}
+
+.logo-black:hover {
+    fill: #8c8b8b;
+}
+
+.mail {
+    fill: rgb(255, 255, 255, 0);
+    stroke: #3D454D;
+}
+
+.mail:hover {
+    stroke: #272727;
+}
+
+.mail-black {
+    stroke: #cdcdcd;
+}
+
+.mail-black:hover {
+    stroke: #8c8b8b;
+}
+
+.modalOverlay {
+    visibility: visible;
+    opacity: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.modalOverlay-hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.welcomeModal {
+    opacity: 1;
+    visibility: visible;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 101;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: auto;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(12px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    border: black solid 2px;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19), 5px 5px 0 black;
+}
+
+.welcomeModal-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.welcomeModal-dark {
+    border: none;
+    background: rgb(244, 244, 244, 0.1);
+    backdrop-filter: blur(15px);
+    box-shadow: inset 3px 3px 0.5px -3.5px white,
+    inset 2px 2px 0.5px -2px #262626,
+    inset -2px -2px 0.5px -2px #262626,
+    inset 0 0 0 1px #A6A6A6,
+    inset 0 0 8px 0 #F2F2F2,
+    0 0 2px 0 rgba(0, 0, 0, 0.1),
+    0 1px 8px 0 rgba(0, 0, 0, 0.1),
+    0 6px 20px 0 rgba(255, 255, 255, 0.25);
+}
+
+.closeWelcomeDiv {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 20px;
+}
+
+.closeWelcome {
+    width: 35px;
+    height: 35px;
+    font-size: 24px;
+    color: #3D454D;
+    background-color: #FFFFFF;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    font-family: "JBMono", sans-serif;
+    border: solid 2px black;
+    box-shadow: 4px 4px 0 black;
+}
+
+.closeWelcome:hover {
+    background-color: #f1f1f1;
+}
+
+.notification-hidden {
+    opacity: 0;
+    padding: 0;
+    margin: 30px 20px 20px 20px;
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    font-family: "JBMono", sans-serif;
+}
+
+.notification-wrong {
+    color: red;
+    padding: 0;
+    margin: 30px 20px 20px 20px;
+    opacity: 1;
+    font-size: 20px;
+    font-family: "JBMono", sans-serif;
+}
+
+.notification-correct {
+    color: #3D454D;
+    opacity: 1;
+    font-weight: 500;
+    font-size: 20px;
+    font-family: "JBMono", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notificationWrong-black {
+    color: white;
+}
+
+.notification-correct-black::after {
+    content: "";
+    background: url("img/WavingHand.png") no-repeat center;
+    width: 16px;
+    height: 16px;
+    background-size: 16px;
+    padding-left: 12px;
+}
+
+.notification-correct::after {
+    content: "";
+    background: url("img/WavingHand.png") no-repeat center;
+    width: 25px;
+    height: 25px;
+    background-size: 25px;
+    padding-left: 18px;
+}
+
+.notification-correct-black {
+    color: white;
+}
+
+.enterNameDiv {
+    display: flex;
+    justify-content: center;
+    margin:  10px 20px 30px 20px;
+    font-family: "JBMono", sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.userNameDiv {
+    display: flex;
+    justify-content: center;
+}
+
+.userName {
+    box-sizing: border-box;
+    width: 200px;
+    text-align: center;
+    height: 40px;
+    background-color: #FFFFFF;
+    font-family: "JBMono", sans-serif;
+    font-size: 17px;
+    border-radius: 10px;
+    border: 2px solid #3D454D;
+}
+
+.userName:focus {
+    outline: none;
+    border: 2px solid #3D454D;
+    background-color: #fbfbfb;
+}
+
+.userName-black {
+    background-color: #303030;
+    border: 1px solid #202020;
+    color: white;
+}
+
+.userName-black:focus {
+    background-color: #373737;
+    border: 1px solid #c8c8c8;
+}
+
+.submitDiv {
+    display: flex;
+    justify-content: center;
+}
+
+.submit {
+    box-sizing: border-box;
+    width: 140px;
+    height: 34px;
+    background-color: #FFFFFF;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    color: #3D454D;
+    align-items: center;
+    padding: 0;
+    margin: 10px 20px 30px 20px;
+    cursor: pointer;
+    font-family: "JBMono", sans-serif;
+    border: solid 2px black;
+    box-shadow: 4px 4px 0 black;
+}
+
+.modalBtns-dark {
+    box-shadow: 3px 3px 0 rgb(93, 93, 97);
+    bottom: 0;
+    right: 0;
+    border: solid 1px rgb(124, 124, 131);
+    background-color: #1e1e1e;
+    color: white;
+}
+
+.submit:hover {
+    background-color: #f1f1f1;
+}
+
+.modalBtns-dark:hover {
+    background-color: #2b2b2b;
+}
+
+@media (min-width: 860px) and (max-width: 970px) {
+    .mode {
+        width: 129px;
+        height: 37px;
+        font-size: 15px;
+    }
+
+    .icon-mode-size {
+        width: 22px;
+        height: 22px;
+    }
+
+    .paragraph {
+        font-size: 72px;
+        font-weight: 800;
+    }
+
+    .buttons {
+        padding-top: 55px;
+    }
+
+    .paragraph-item:last-child {
+        font-size: 36px;
+        font-weight: 400;
+        padding-top: 35px;
+    }
+
+    .button1, .button2, .button3 {
+        height: 46px;
+        width: 270px;
+        font-size: 16px;
+    }
+
+    .icons {
+        width: 24px;
+        height: 24px;
+        margin-right: 10px;
+    }
+
+    .modalOverlay {
+        visibility: visible;
+        opacity: 1;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(5px);
+        transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .modalOverlay-hidden {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    .welcomeModal {
+        opacity: 1;
+        visibility: visible;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        z-index: 101;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        height: auto;
+        background: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(12px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        border: black solid 2px;
+        box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19), 5px 5px 0 black;
+    }
+
+    .welcomeModal-hidden {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .welcomeModal-dark {
+        border: none;
+        background: rgb(244, 244, 244, 0.1);
+        backdrop-filter: blur(15px);
+        box-shadow: inset 3px 3px 0.5px -3.5px white,
+        inset 2px 2px 0.5px -2px #262626,
+        inset -2px -2px 0.5px -2px #262626,
+        inset 0 0 0 1px #A6A6A6,
+        inset 0 0 8px 0 #F2F2F2,
+        0 0 2px 0 rgba(0, 0, 0, 0.1),
+        0 1px 8px 0 rgba(0, 0, 0, 0.1),
+        0 6px 20px 0 rgba(255, 255, 255, 0.25);
+    }
+
+    .closeWelcomeDiv {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        padding: 16px;
+    }
+
+    .closeWelcome {
+        width: 28px;
+        height: 28px;
+        font-size: 20px;
+        color: #3D454D;
+        background-color: #FFFFFF;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        cursor: pointer;
+        font-family: "JBMono", sans-serif;
+        border: solid 2px black;
+        box-shadow: 3px 3px 0 black;
+    }
+
+    .closeWelcome:hover {
+        background-color: #f1f1f1;
+    }
+
+    .notification-hidden {
+        opacity: 0;
+        padding: 0;
+        margin: 26px 16px 16px 16px;
+        display: flex;
+        justify-content: center;
+        font-size: 16px;
+        font-family: "JBMono", sans-serif;
+    }
+
+    .notification-wrong {
+        color: red;
+        padding: 0;
+        margin: 26px 16px 16px 16px;
+        opacity: 1;
+        font-size: 16px;
+        font-family: "JBMono", sans-serif;
+    }
+
+    .notification-correct {
+        color: #3D454D;
+        opacity: 1;
+        font-weight: 500;
+        font-size: 16px;
+        font-family: "JBMono", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .notificationWrong-black {
+        color: white;
+    }
+
+    .notification-correct-black::after {
+        content: "";
+        background: url("img/WavingHand.png") no-repeat center;
+        width: 16px;
+        height: 16px;
+        background-size: 16px;
+        padding-left: 12px;
+    }
+
+    .notification-correct::after {
+        content: "";
+        background: url("img/WavingHand.png") no-repeat center;
+        width: 20px;
+        height: 20px;
+        background-size: 20px;
+        padding-left: 15px;
+    }
+
+    .notification-correct-black {
+        color: white;
+    }
+
+    .enterNameDiv {
+        display: flex;
+        justify-content: center;
+        margin:  8px 16px 32px 16px;
+        font-family: "JBMono", sans-serif;
+        font-size: 20px;
+        font-weight: 400;
+    }
+
+    .userNameDiv {
+        display: flex;
+        justify-content: center;
+    }
+
+    .userName {
+        box-sizing: border-box;
+        width: 160px;
+        text-align: center;
+        height: 28px;
+        background-color: #FFFFFF;
+        font-family: "JBMono", sans-serif;
+        font-size: 14px;
+        border-radius: 8px;
+        border: 2px solid #3D454D;
+    }
+
+    .userName:focus {
+        outline: none;
+        border: 2px solid #3D454D;
+        background-color: #fbfbfb;
+    }
+
+    .userName-black {
+        background-color: #303030;
+        border: 1px solid #202020;
+        color: white;
+    }
+
+    .userName-black:focus {
+        background-color: #373737;
+        border: 1px solid #c8c8c8;
+    }
+
+    .submitDiv {
+        display: flex;
+        justify-content: center;
+    }
+
+    .submit {
+        box-sizing: border-box;
+        width: 132px;
+        height: 30px;
+        background-color: #FFFFFF;
+        font-size: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin: 8px 16px 24px 16px;
+        cursor: pointer;
+        font-family: "JBMono", sans-serif;
+        border: solid 2px black;
+        box-shadow: 4px 4px 0 black;
+    }
+
+    .modalBtns-dark {
+        box-shadow: 3px 3px 0 rgb(93, 93, 97);
+        bottom: 0;
+        right: 0;
+        border: solid 1px rgb(124, 124, 131);
+        background-color: #1e1e1e;
+        color: white;
+    }
+
+    .submit:hover {
+        background-color: #f1f1f1;
+    }
+
+    .modalBtns-dark:hover {
+        background-color: #2b2b2b;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 859px) {
+    .mode {
+        width: 105px;
+        height: 30px;
+        font-size: 75%;
+    }
+
+    .icon-mode-size {
+        width: 18px;
+        height: 18px;
+    }
+
+    .paragraph {
+        font-size: 60px;
+        font-weight: 800;
+    }
+
+    .paragraph-item:last-child {
+        font-size: 30px;
+        font-weight: 400;
+        padding-top: 35px;
+    }
+
+    .buttons {
+        padding-top: 50px;
+    }
+
+    .button1, .button2, .button3 {
+        height: 38px;
+        width: 220px;
+        font-size: 14px;
+    }
+
+    .icons {
+        width: 18px;
+        height: 18px;
+        margin-right: 10px;
+    }
+
+    .logo {
+        height: 26px;
+        width: 127px;
+    }
+
+    .mail {
+        height: 31px;
+        width: 31px;
+    }
+
+    .modalOverlay {
+        visibility: visible;
+        opacity: 1;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(5px);
+        transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .modalOverlay-hidden {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    .welcomeModal {
+        opacity: 1;
+        visibility: visible;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        z-index: 101;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        height: auto;
+        background: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(12px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        border: black solid 2px;
+        box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19), 5px 5px 0 black;
+    }
+
+    .welcomeModal-hidden {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .welcomeModal-dark {
+        border: none;
+        background: rgb(244, 244, 244, 0.1);
+        backdrop-filter: blur(15px);
+        box-shadow: inset 3px 3px 0.5px -3.5px white,
+        inset 2px 2px 0.5px -2px #262626,
+        inset -2px -2px 0.5px -2px #262626,
+        inset 0 0 0 1px #A6A6A6,
+        inset 0 0 8px 0 #F2F2F2,
+        0 0 2px 0 rgba(0, 0, 0, 0.1),
+        0 1px 8px 0 rgba(0, 0, 0, 0.1),
+        0 6px 20px 0 rgba(255, 255, 255, 0.25);
+    }
+
+    .closeWelcomeDiv {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        padding: 16px;
+    }
+
+    .closeWelcome {
+        width: 28px;
+        height: 28px;
+        font-size: 20px;
+        color: #3D454D;
+        background-color: #FFFFFF;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        cursor: pointer;
+        font-family: "JBMono", sans-serif;
+        border: solid 2px black;
+        box-shadow: 3px 3px 0 black;
+    }
+
+    .closeWelcome:hover {
+        background-color: #f1f1f1;
+    }
+
+    .notification-hidden {
+        opacity: 0;
+        padding: 0;
+        margin: 26px 16px 16px 16px;
+        display: flex;
+        justify-content: center;
+        font-size: 16px;
+        font-family: "JBMono", sans-serif;
+    }
+
+    .notification-wrong {
+        color: red;
+        padding: 0;
+        margin: 26px 16px 16px 16px;
+        opacity: 1;
+        font-size: 16px;
+        font-family: "JBMono", sans-serif;
+    }
+
+    .notification-correct {
+        color: #3D454D;
+        opacity: 1;
+        font-weight: 500;
+        font-size: 16px;
+        font-family: "JBMono", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .notificationWrong-black {
+        color: white;
+    }
+
+    .notification-correct-black::after {
+        content: "";
+        background: url("img/WavingHand.png") no-repeat center;
+        width: 16px;
+        height: 16px;
+        background-size: 16px;
+        padding-left: 12px;
+    }
+
+    .notification-correct::after {
+        content: "";
+        background: url("img/WavingHand.png") no-repeat center;
+        width: 20px;
+        height: 20px;
+        background-size: 20px;
+        padding-left: 15px;
+    }
+
+    .notification-correct-black {
+        color: white;
+    }
+
+    .enterNameDiv {
+        display: flex;
+        justify-content: center;
+        margin:  8px 16px 32px 16px;
+        font-family: "JBMono", sans-serif;
+        font-size: 20px;
+        font-weight: 400;
+    }
+
+    .userNameDiv {
+        display: flex;
+        justify-content: center;
+    }
+
+    .userName {
+        box-sizing: border-box;
+        width: 160px;
+        text-align: center;
+        height: 28px;
+        background-color: #FFFFFF;
+        font-family: "JBMono", sans-serif;
+        font-size: 14px;
+        border-radius: 8px;
+        border: 2px solid #3D454D;
+    }
+
+    .userName:focus {
+        outline: none;
+        border: 2px solid #3D454D;
+        background-color: #fbfbfb;
+    }
+
+    .userName-black {
+        background-color: #303030;
+        border: 1px solid #202020;
+        color: white;
+    }
+
+    .userName-black:focus {
+        background-color: #373737;
+        border: 1px solid #c8c8c8;
+    }
+
+    .submitDiv {
+        display: flex;
+        justify-content: center;
+    }
+
+    .submit {
+        box-sizing: border-box;
+        width: 132px;
+        height: 30px;
+        background-color: #FFFFFF;
+        font-size: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin: 8px 16px 24px 16px;
+        cursor: pointer;
+        font-family: "JBMono", sans-serif;
+        border: solid 2px black;
+        box-shadow: 4px 4px 0 black;
+    }
+
+    .modalBtns-dark {
+        box-shadow: 3px 3px 0 rgb(93, 93, 97);
+        bottom: 0;
+        right: 0;
+        border: solid 1px rgb(124, 124, 131);
+        background-color: #1e1e1e;
+        color: white;
+    }
+
+    .submit:hover {
+        background-color: #f1f1f1;
+    }
+
+    .modalBtns-dark:hover {
+        background-color: #2b2b2b;
+    }
+}
+
+@media (min-width: 468px) and (max-width: 699px) {
+    .mode {
+        width: 100px;
+        height: 27px;
+        font-size: 10px;
+        box-shadow: 4px 4px 0 black;
+    }
+
+    .icon-mode-size {
+        width: 16px;
+        height: 16px;
+    }
+
+    .paragraph {
+        font-size: 48px;
+        font-weight: 800;
+    }
+
+    .paragraph-item:last-child {
+        font-size: 24px;
+        font-weight: 400;
+        padding-top: 35px;
+    }
+
+    .buttons {
+        padding-top: 50px;
+    }
+
+    .button1, .button2, .button3 {
+        height: 34px;
+        width: 200px;
+        font-size: 12px;
+    }
+
+    .icons {
+        width: 18px;
+        height: 18px;
+        margin-right: 8px;
+    }
+
+    .button1:hover, .button2:hover, .button3:hover {
+        box-shadow: 5px 5px 0;
+        bottom: 0;
+        right: 0;
+    }
+
+    .mode:hover, .back:hover {
+        box-shadow: 4px 4px 0 black;
+        bottom: 0;
+        right: 0;
+    }
+
+    .button-black {
+        box-shadow: 4px 4px 0 rgb(93, 93, 97);
+        bottom: 0;
+        right: 0;
+    }
+
+    .button-black:hover {
+        box-shadow: 4px 4px 0 rgb(93, 93, 97);
+        bottom: 0;
+        right: 0;
+    }
+
+    .logo {
+        height: 23px;
+        width: 112px;
+    }
+
+    .mail {
+        height: 28px;
+        width: 28px;
+    }
+
+    .modalOverlay {
+        visibility: visible;
+        opacity: 1;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(5px);
+        transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .modalOverlay-hidden {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    .welcomeModal {
+        opacity: 1;
+        visibility: visible;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        z-index: 101;
+        transform: translate(-50%, -50%);
+        width: 300px;
+        height: auto;
+        background: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(12px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        border: black solid 2px;
+        box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19), 5px 5px 0 black;
+    }
+
+    .welcomeModal-hidden {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .welcomeModal-dark {
+        border: none;
+        background: rgb(244, 244, 244, 0.1);
+        backdrop-filter: blur(15px);
+        box-shadow: inset 3px 3px 0.5px -3.5px white,
+        inset 2px 2px 0.5px -2px #262626,
+        inset -2px -2px 0.5px -2px #262626,
+        inset 0 0 0 1px #A6A6A6,
+        inset 0 0 8px 0 #F2F2F2,
+        0 0 2px 0 rgba(0, 0, 0, 0.1),
+        0 1px 8px 0 rgba(0, 0, 0, 0.1),
+        0 6px 20px 0 rgba(255, 255, 255, 0.25);
+    }
+
+    .closeWelcomeDiv {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        padding: 12px;
+    }
+
+    .closeWelcome {
+        width: 21px;
+        height: 21px;
+        font-size: 16px;
+        color: #3D454D;
+        background-color: #FFFFFF;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        cursor: pointer;
+        font-family: "JBMono", sans-serif;
+        border: solid 1.5px black;
+        box-shadow: 2px 2px 0 black;
+    }
+
+    .closeWelcome:hover {
+        background-color: #f1f1f1;
+    }
+
+    .notification-hidden {
+        opacity: 0;
+        padding: 0;
+        margin: 20px 12px 12px 12px;
+        display: flex;
+        justify-content: center;
+        font-size: 12px;
+        font-family: "JBMono", sans-serif;
+    }
+
+    .notification-wrong {
+        color: red;
+        padding: 0;
+        margin: 20px 12px 12px 12px;
+        opacity: 1;
+        font-size: 12px;
+        font-family: "JBMono", sans-serif;
+    }
+
+    .notification-correct {
+        color: #3D454D;
+        opacity: 1;
+        font-weight: 500;
+        font-size: 12px;
+        font-family: "JBMono", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .notificationWrong-black {
+        color: white;
+    }
+
+    .notification-correct-black::after {
+        content: "";
+        background: url("img/WavingHand.png") no-repeat center;
+        width: 16px;
+        height: 16px;
+        background-size: 16px;
+        padding-left: 12px;
+    }
+
+    .notification-correct::after {
+        content: "";
+        background: url("img/WavingHand.png") no-repeat center;
+        width: 15px;
+        height: 15px;
+        background-size: 15px;
+        padding-left: 12px;
+    }
+
+    .notification-correct-black {
+        color: white;
+    }
+
+    .enterNameDiv {
+        display: flex;
+        justify-content: center;
+        margin:  6px 12px 24px 12px;
+        font-family: "JBMono", sans-serif;
+        font-size: 15px;
+        font-weight: 400;
+    }
+
+    .userNameDiv {
+        display: flex;
+        justify-content: center;
+    }
+
+    .userName {
+        box-sizing: border-box;
+        width: 180px;
+        text-align: center;
+        height: 26px;
+        background-color: #FFFFFF;
+        font-family: "JBMono", sans-serif;
+        font-size: 12px;
+        border-radius: 6px;
+        border: 1.5px solid #3D454D;
+    }
+
+    .userName:focus {
+        outline: none;
+        border: 1.5px solid #3D454D;
+        background-color: #fbfbfb;
+    }
+
+    .userName-black {
+        background-color: #303030;
+        border: 1px solid #202020;
+        color: white;
+    }
+
+    .userName-black:focus {
+        background-color: #373737;
+        border: 1px solid #c8c8c8;
+    }
+
+    .submitDiv {
+        display: flex;
+        justify-content: center;
+    }
+
+    .submit {
+        box-sizing: border-box;
+        width: 100px;
+        height: 24px;
+        background-color: #FFFFFF;
+        font-size: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin: 8px 16px 24px 16px;
+        cursor: pointer;
+        font-family: "JBMono", sans-serif;
+        border: solid 1.5px black;
+        box-shadow: 3px 3px 0 black;
+    }
+
+    .modalBtns-dark {
+        box-shadow: 3px 3px 0 rgb(93, 93, 97);
+        bottom: 0;
+        right: 0;
+        border: solid 1px rgb(124, 124, 131);
+        background-color: #1e1e1e;
+        color: white;
+    }
+
+    .submit:hover {
+        background-color: #f1f1f1;
+    }
+
+    .modalBtns-dark:hover {
+        background-color: #2b2b2b;
+    }
+}
+
+@media (min-width: 300px) and (max-width: 467px) {
+    body {
+        box-sizing: border-box;
+        min-height: 100vh;
+    }
+
+    .main-container {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-rows: auto auto auto;
+    }
+
+    .header {
+        margin: 10px;
+        border-radius: 30px;
+        border-bottom: none;
+        /*border: black solid 1px;*/
+        /*border: 2px solid rgba(255, 255, 255, 0.2);*/
+        transform: translate3d(0, 0, 0) rotateX(0);
+        transition: 0.45s cubic-bezier(.71,0,.34,1);
+        opacity: 1;
+        box-sizing: border-box;
+        height: 71px;
+        box-shadow: inset 3px 3px 0.5px -3.5px rgba(255, 255, 255, 0.75),
+        inset 3px 3px 0.5px -3.5px rgba(255, 255, 255, 0.8),
+        inset 1px 1px 1px 0.5px rgba(255, 255, 255, 0.75),
+        inset -1px -1px 1px 0.5px rgba(255, 255, 255, 0.2),
+        inset 0 0 1px 1px rgba(255, 255, 255, 0.15),
+        inset 0 0 1px 1px rgba(153, 153, 153, 1),
+        inset 0 0 16px 0 rgba(242, 242, 242, 1),
+        0 0 2px 0 rgba(0, 0, 0, 0.1),
+        0 1px 8px 0 rgba(0, 0, 0, 0.1),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .header-hidden {
+        visibility: hidden;
+        opacity: 0;
+        transform: translate3d(0, 50px, -90px) rotateX(-80deg);
+    }
+
+
+    .header-black {
+        /*border: 2px solid rgba(255, 255, 255, 0.2);*/
+        box-shadow: inset 3px 3px 0.5px -3.5px white,
+        inset 2px 2px 0.5px -2px #262626,
+        inset -2px -2px 0.5px -2px #262626,
+        inset 0 0 0 1px #A6A6A6,
+        inset 0 0 8px 0 #F2F2F2,
+        0 0 2px 0 rgba(0, 0, 0, 0.1),
+        0 1px 8px 0 rgba(0, 0, 0, 0.1),
+        0 6px 20px 0 rgba(255, 255, 255, 0.25);
+    }
+
+    .mode {
+        width: 100px;
+        height: 27px;
+        font-size: 11px;
+        transition: 0.3s;
+        box-shadow: 3px 3px 0 black;
+        border: black 1px solid;
+        border-radius: 8px;
+        padding: 0 4px 0 4px;
+    }
+
+    .icon-mode-size {
+        width: 16px;
+        height: 16px;
+    }
+
+    .button-black {
+        border: solid 1px rgb(124, 124, 131);
+    }
+
+    .paragraph {
+        font-size: 48px;
+        font-weight: 800;
+    }
+
+    .paragraph-item:last-child {
+        font-size: 24px;
+        font-weight: 400;
+        padding-top: 35px;
+    }
+
+    .buttons {
+        padding-top: 50px;
+        row-gap: 14px;
+    }
+
+    .button1, .button2, .button3 {
+        height: 34px;
+        width: 188px;
+        font-size: 12px;
+        border: black 1px solid;
+        border-radius: 8px;
+        box-shadow: 3px 3px 0 black;
+    }
+
+    .icons {
+        width: 17px;
+        height: 17px;
+        margin-right: 6px;
+    }
+
+
+    .button1:hover, .button2:hover, .button3:hover {
+        box-shadow: 3px 3px 0 black;
+        bottom: 0;
+        right: 0;
+    }
+
+    .mode:hover, .back:hover {
+        box-shadow: 3px 3px 0 black;
+        bottom: 0;
+        right: 0;
+    }
+
+    .button-black {
+        box-shadow: 3px 3px 0 rgb(93, 93, 97);
+        bottom: 0;
+        right: 0;
+        border: solid 1px rgb(124, 124, 131);
+    }
+
+    .button-black:hover {
+        box-shadow: 3px 3px 0 rgb(93, 93, 97);
+        bottom: 0;
+        right: 0;
+    }
+
+    .logo {
+        height: 23px;
+        width: 112px;
+    }
+
+    .mail {
+        height: 28px;
+        width: 28px;
+    }
+
+    .contacts-mail {
+        display: flex;
+        align-items: end;
+    }
+
+    .modalOverlay {
+        visibility: visible;
+        opacity: 1;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(5px);
+        transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .modalOverlay-hidden {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    .welcomeModal {
+        opacity: 1;
+        visibility: visible;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        z-index: 101;
+        transform: translate(-50%, -50%);
+        width: 300px;
+        height: auto;
+        background: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(12px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        border: none;
+        border-radius: 25px;
+        box-shadow: inset 3px 3px 0.5px -3.5px rgba(255, 255, 255, 0.75),
+        inset 3px 3px 0.5px -3.5px rgba(255, 255, 255, 0.8),
+        inset 1px 1px 1px 0.5px rgba(255, 255, 255, 0.75),
+        inset -1px -1px 1px 0.5px rgba(255, 255, 255, 0.2),
+        inset 0 0 1px 1px rgba(255, 255, 255, 0.15),
+        inset 0 0 1px 1px rgba(153, 153, 153, 1),
+        inset 0 0 16px 0 rgba(242, 242, 242, 1),
+        0 0 2px 0 rgba(0, 0, 0, 0.1),
+        0 1px 8px 0 rgba(0, 0, 0, 0.1),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .welcomeModal-hidden {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .welcomeModal-dark {
+        background: rgb(244, 244, 244, 0.1);
+        backdrop-filter: blur(15px);
+        box-shadow: inset 3px 3px 0.5px -3.5px white,
+        inset 2px 2px 0.5px -2px #262626,
+        inset -2px -2px 0.5px -2px #262626,
+        inset 0 0 0 1px #A6A6A6,
+        inset 0 0 8px 0 #F2F2F2,
+        0 0 2px 0 rgba(0, 0, 0, 0.1),
+        0 1px 8px 0 rgba(0, 0, 0, 0.1),
+        0 6px 20px 0 rgba(255, 255, 255, 0.25);
+    }
+
+    .closeWelcomeDiv {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        padding-bottom: 12px ;
+    }
+
+    .closeWelcome {
+        width: 24px;
+        height: 24px;
+        font-size: 20px;
+        background-color: #FFFFFF;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        cursor: pointer;
+        border-radius: 8px;
+        font-family: "JBMono", sans-serif;
+        border: solid 1.1px black;
+        box-shadow: 2px 2px 0 black;
+    }
+
+    .closeWelcome:hover {
+        background-color: #f1f1f1;
+    }
+
+    .notification-hidden {
+        opacity: 0;
+        padding: 0;
+        margin: 20px 12px 12px 12px;
+        display: flex;
+        justify-content: center;
+        font-size: 13px;
+        font-family: "JBMono", sans-serif;
+    }
+
+    .notification-wrong {
+        color: #3D454D;
+        padding: 0;
+        margin: 20px 12px 12px 12px;
+        opacity: 1;
+        font-size: 13px;
+        font-family: "JBMono", sans-serif;
+    }
+
+    .notification-correct {
+        color: #3D454D;
+        opacity: 1;
+        font-weight: 500;
+        font-size: 13px;
+        font-family: "JBMono", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .notificationWrong-black {
+        color: white;
+    }
+
+    .notification-correct::after {
+        content: "";
+        background: url("img/WavingHand.png") no-repeat center;
+        width: 16px;
+        height: 16px;
+        background-size: 16px;
+        padding-left: 12px;
+    }
+
+    .notification-correct-black {
+        color: white;
+    }
+
+    .notification-correct-black::after {
+        content: "";
+        background: url("img/WavingHand.png") no-repeat center;
+        width: 16px;
+        height: 16px;
+        background-size: 16px;
+        padding-left: 12px;
+    }
+
+    .enterNameDiv {
+        display: flex;
+        justify-content: center;
+        margin:  6px 12px 24px 12px;
+        font-family: "JBMono", sans-serif;
+        font-size: 15px;
+        font-weight: 400;
+    }
+
+    .userNameDiv {
+        display: flex;
+        justify-content: center;
+    }
+
+    .userName {
+        box-sizing: border-box;
+        width: 180px;
+        text-align: center;
+        height: 26px;
+        background-color: #FFFFFF;
+        font-family: "JBMono", sans-serif;
+        font-size: 12px;
+        border-radius: 6px;
+        border: 1px solid #999fa3;
+    }
+
+    .userName:focus {
+        outline: none;
+        border: 1px solid #3D454D;
+        background-color: #fbfbfb;
+    }
+
+    .userName-black {
+        background-color: #303030;
+        border: 1px solid #202020;
+        color: white;
+    }
+
+    .userName-black:focus {
+        background-color: #373737;
+        border: 1px solid #c8c8c8;
+    }
+
+    .submitDiv {
+        display: flex;
+        justify-content: center;
+    }
+
+    .submit {
+        box-sizing: border-box;
+        width: 100px;
+        height: 24px;
+        background-color: #FFFFFF;
+        font-size: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin: 8px 16px 24px 16px;
+        cursor: pointer;
+        font-family: "JBMono", sans-serif;
+        border: solid 1px black;
+        box-shadow: 2px 2px 0 black;
+        border-radius: 8px;
+    }
+
+    .modalBtns-dark {
+        box-shadow: 3px 3px 0 rgb(93, 93, 97);
+        bottom: 0;
+        right: 0;
+        border: solid 1px rgb(124, 124, 131);
+        background-color: #1e1e1e;
+        color: white;
+    }
+
+    .submit:hover {
+        background-color: #f1f1f1;
+    }
+
+    .modalBtns-dark:hover {
+        background-color: #1e1e1e;
+    }
+}
